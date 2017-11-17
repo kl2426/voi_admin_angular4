@@ -1,0 +1,103 @@
+<div class="m-user">
+    <div nz-row>
+        <div nz-col [nzSm]="6">
+            <div nz-form-item>
+                <div nz-form-label nz-col [nzSpan]="8">
+                    <label nz-form-item-required>用户组</label>
+                </div>
+                <div nz-form-control nz-col [nzSpan]="16">
+                    <nz-select [nzSize]="'large'" style="width:100%;">
+                        <nz-option [nzLabel]="'China'" [nzValue]="'China'"></nz-option>
+                        <nz-option [nzLabel]="'U.S.A'" [nzValue]="'U.S.A'"></nz-option>
+                    </nz-select>
+                </div>
+            </div>
+        </div>
+        <div nz-col [nzSm]="6">
+            <div nz-form-item>
+                <div nz-form-label nz-col [nzSm]="8" [nzXs]="24">
+                    <label for="email" nz-form-item-required>用户名</label>
+                </div>
+                <div nz-form-control nz-col [nzSm]="16" [nzXs]="24">
+                    <nz-input [nzSize]="'large'" [nzId]="'email'"></nz-input>
+                </div>
+            </div>
+        </div>
+        <div nz-col [nzSm]="6" [nzOffset]="'1'">
+            <div nz-form-item>
+                <button nz-button [nzType]="'primary'" [nzSize]="'large'">
+                    <span>查询</span>
+                </button>
+            </div>
+        </div>
+        
+
+    </div>
+    
+    <!--   列表表格   -->
+    <div class="user-table">
+        <nz-card class="m-box">
+            <ng-template #body>
+        
+                <nz-table #nzTable [nzAjaxData]="table_data.table_res.row" [nzShowSizeChanger]="true" [nzLoading]="loading" [nzTotal]="table_data.table_res.total" [(nzPageIndex)]="table_data.form.pageIndex"
+                    (nzPageIndexChange)="findFunctionList()" [(nzPageSize)]="table_data.form.pageSize" (nzPageSizeChange)="findFunctionList()">
+                    <thead nz-thead>
+                        <tr>
+                            <th nz-th [nzCheckbox]="true">
+                                <label nz-checkbox [(ngModel)]="table_data.checkbox.allChecked" [nzIndeterminate]="table_data.checkbox.indeterminate" (ngModelChange)="table_data.checkbox.checkAll()">
+                                </label>
+                            </th>
+                            <th nz-th>
+                                <span>用户名</span>
+                                <nz-table-sort (nzValueChange)="table_data.sort($event, 'name')"></nz-table-sort>
+                            </th>
+                            <th nz-th>
+                                <span>真实姓名</span>
+                                <nz-table-sort (nzValueChange)="table_data.sort($event, 'realName')"></nz-table-sort>
+                            </th>
+                            <th nz-th>
+                                <span>用户组</span>
+                            </th>
+                            <th nz-th>
+                                <span>绑定终端组</span>
+                            </th>
+                            <th nz-th>
+                                <span>绑定的终端</span>
+                            </th>
+                            <th nz-th>
+                                <span>操作</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody nz-tbody>
+                        <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                            <td nz-td [nzCheckbox]="true">
+                                <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="table_data.checkbox.refChecked()">
+                                </label>
+                            </td>
+                            <td nz-td>{{data.name}}</td>
+                            <td nz-td>{{data.realName}}</td>
+                            <td nz-td>{{data.grpName}}</td>
+                            <td nz-td>{{data.grpName}}</td>
+                            <td nz-td>{{data.grpName}}</td>
+                            <td nz-td>
+                                <nz-dropdown-button (nzClick)="showMsg('修改')" [nzSize]="'small'">
+                                    修改
+                                    <ul nz-menu class="m-dropdown-operate">
+                                        <li nz-menu-item>
+                                            <a (click)="showMsg('查看')">查看</a>
+                                        </li>
+                                        <li nz-menu-item>
+                                            <a (click)="showMsg('删除')">删除</a>
+                                        </li>
+                                    </ul>
+                                </nz-dropdown-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </ng-template>
+        </nz-card>
+    </div>
+
+</div>

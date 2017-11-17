@@ -1,0 +1,527 @@
+//  /* 建议所有项目自定义样式放在该文件夹下 */
+
+/*   公共  */
+
+body {
+    background-color: #f6f6f6 !important;
+}
+
+
+/*  btn  */
+.ant-btn-primary{
+    background-color: #b18bbb !important;border-color: #b18bbb !important;
+}
+.ant-btn-primary.disabled, .ant-btn-primary[disabled], .ant-btn-primary.disabled:hover, .ant-btn-primary[disabled]:hover, .ant-btn-primary.disabled:focus, .ant-btn-primary[disabled]:focus, .ant-btn-primary.disabled:active, .ant-btn-primary[disabled]:active, .ant-btn-primary.disabled.active, .ant-btn-primary[disabled].active{
+    background-color: #f3c769 !important;border-color: #f3c769 !important;color: #fff !important;
+}
+.ant-btn-primary:hover, .ant-btn-primary:focus{
+    background-color: #a170ae !important;border-color: #a170ae !important;
+}
+
+.ant-dropdown-button{
+    .ant-btn:hover, .ant-btn:focus {
+        color: #b18bbb;
+        background-color: #fff;
+        border-color: #b18bbb;
+    }
+}
+.m-dropdown-operate{
+    > li{
+        &:hover{
+            a{
+                color: #fff;
+            }
+        }
+        &.ant-dropdown-menu-item-selected{
+            a{
+                color: #fff;
+            }
+        }
+        background-color: transparent;
+        > a{
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+    }
+}
+
+
+
+
+//   input
+.ant-select .ant-select-selection{
+    &:hover{
+        border-color: #b18bbb ;
+    }
+    &:focus{
+        border-color: #b18bbb ;
+        box-shadow: 0 0 0 2px rgba(121, 78, 163, 0.2);
+    }
+}
+
+.ant-input-wrapper .ant-input{
+    &:hover{
+        border-color: #b18bbb ;
+    }
+    &:focus{
+        border-color: #b18bbb ;
+        box-shadow: 0 0 0 2px rgba(121, 78, 163, 0.2);
+    }
+}
+
+//    select
+.ant-select-dropdown{
+    .ant-select-dropdown-menu-item:hover,
+    .ant-select-dropdown-menu-item-active{
+        background-color: #b18bbb;
+        color: #fff;
+    }
+}
+
+
+//   show hidden
+.show{display: block !important;}
+.hidden{display: none !important; }
+
+.m-xs{margin: 10px !important; }
+
+.m-box.ant-card{
+    background-color: #fff;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 2px 7px #ddd;
+    -webkit-box-shadow: 0px 2px 7px #ddd;
+    box-shadow: 0px 2px 7px #ddd;
+}
+
+
+//   下拉菜单
+.ant-dropdown{
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
+}
+.ant-dropdown-menu{
+    > li.ant-dropdown-menu-submenu{
+        > div.ant-dropdown-menu-submenu-title{
+            border-radius: 0px;
+            &:hover{
+                color: #fff;
+            }
+        }
+        &:first-child{
+            > div.ant-dropdown-menu-submenu-title{
+                border-top-right-radius: 4px;
+                border-top-left-radius: 4px;
+            }
+        }
+        &:last-child{
+            > div.ant-dropdown-menu-submenu-title{
+                border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+        }
+    }
+}
+.ant-dropdown-menu-item, 
+.ant-dropdown-menu-submenu-title{
+     background-color: #b18bbb;
+    text-align: center;
+    color: #fff !important;
+}
+.ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover{
+    background-color: #ccadd5 !important;
+}
+.ant-dropdown-menu-item-selected, .ant-dropdown-menu-submenu-title-selected, .ant-dropdown-menu-item-selected > a, .ant-dropdown-menu-submenu-title-selected > a{
+    background-color: #ccadd5 !important;
+}
+.ant-dropdown-menu-submenu-title:after{
+    top:9px !important;
+    color: #fff !important;
+}
+.ant-menu{
+    .ant-menu-item{
+        background-color: #b18bbb;
+        text-align: center;
+        color: #fff;
+        border-radius: 0px;
+        padding: 0 !important;
+        height: 34px !important;
+        line-height: 34px !important;
+         &:hover{
+             background-color: #ccadd5;
+            color: #fff;
+        }
+        &:first-child{
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+        &:last-child{
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+    }
+    > li.ant-menu-submenu{
+        > div.ant-menu-submenu-title{
+            margin-right: -1px;
+            background-color: #b18bbb;
+            text-align: center;
+            color: #fff;
+            border-radius: 0px;
+            padding: 0 !important;
+            height: 34px !important;
+            line-height: 34px !important;
+            &:hover{
+                background-color: #ccadd5;
+                color: #fff;
+            }
+            &:after{
+                right: 3px;
+                top: 0px;
+                color: #fff;
+            }
+        }
+        &:first-child{
+            > div.ant-menu-submenu-title{
+                border-top-right-radius: 4px;
+                border-top-left-radius: 4px;
+            }
+        }
+        &:last-child{
+            > div.ant-menu-submenu-title{
+                border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+        }
+    }
+}
+
+.ant-form-item {
+    font-size: 12px;
+    margin-bottom: 24px;
+    color: rgba(0,0,0,.65);
+    vertical-align: top;
+}
+
+.ant-form-item-label {
+    text-align: right;
+    vertical-align: middle;
+    line-height: 32px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    label{margin-right: 10px;}
+}
+
+/*   /公共  */
+
+
+/*   头部  */
+
+.header{
+    height: 56px;
+    background-color: #fff;
+    .logo{
+        width: 224px;
+        height: 56px;
+        line-height: 56px;
+        background-color: #b18bbb;
+        a{
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+    .top-nav{
+        > li{
+            margin-right: 40px;
+            .ant-btn{
+                min-width: 80px;
+            }
+            .item{
+                i{
+                    color: #000;
+                }
+            }
+        }
+        .user-name{
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 5px;
+            height: 34px;
+            line-height: 34px;
+            color: #000;
+        }
+    }
+}
+
+.m-theme-pink{
+    position: relative;
+    display: block;
+    width: 14px;
+    border-radius: 2px;
+    height: 14px;
+    background-color: transparent;
+    border: solid 1px #f7cd69;
+    &:before{
+        position: absolute;
+        left: -4px;
+        top: -4px;
+        border-radius: 2px;
+        display: block;
+        content: " ";
+        width: 14px;
+        height: 14px;
+        background-color: #f7cd69;
+    }
+}
+
+/*   /头部  */
+
+
+/*   菜单  */
+
+.aside{
+    width: 225px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(133, 109, 169)), color-stop(0.4, rgb(179, 137, 185)), to(rgb(84, 62, 113)));
+    margin-top: 56px;
+}
+
+.nav{
+    > li{
+        border-left: 0;
+        > a{
+            padding: 15px 16px;
+            border-left: solid 4px transparent;
+            color: #fff;
+            &:hover{
+                background-color: #7c649b;
+                border-left: solid 4px #7c649b;
+                color: #fff;
+            }
+        }
+        &.nav-item-selected{
+            background-color: transparent;
+            border-left: 0;
+            > a{
+                background-color: #7c649b;
+                border-left: solid 4px #f5bd37;
+                color: #fff;
+            }
+        }
+    }
+    &.nav-depth1{
+        > li{
+            > a{
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+                border-left: 0;
+                margin: 6px 0 6px 40px;
+                padding: 5px 10px;
+                padding-left: 20px;
+                font-size: 12px;
+            }
+            &.nav-item-selected{
+                background-color: transparent;
+                > a{
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+.nav-sub-title{
+    &:after{
+        top:19px;
+    }
+}
+
+
+/*   /菜单  */
+
+
+/*   cont  */
+.content{margin: 76px 20px 20px 250px;}
+
+ 
+
+
+//   通用样式
+//   标题条
+.m-title{
+    .title-name{
+        position: relative;
+        display: inline-block;
+        padding-left: 15px;
+        line-height: 30px;
+        font-weight: bold;
+        font-size: 16px;
+        color: inherit;
+        &:before{
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: " ";
+            display: block;
+            height: 100%;
+            width: 6px;
+            border-radius: 3px;
+            background-color: #d3c0d8;
+        }
+    }
+}
+
+
+
+//    表格
+.ant-table{
+    border-radius: 0 !important;
+    table{
+        border-radius: 0 !important;
+    }
+    .ant-table-thead{
+        > tr{
+            > th{
+                background-color: #b18bbb;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: #fff;
+                &.ant-table-column-sort{
+                    background-color: #b18bbb;
+                    span.on i{
+                        color: #ffbf00;
+                    }
+                }
+            }
+        }
+    }
+    .ant-table-tbody{
+        > tr{
+            > td{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            &:nth-child(2n){
+                > td{
+                    background-color: #fbf9fc;
+                }
+                &:hover{
+                    > td{
+                        background-color: rgb(253, 242, 255);
+                    }
+                }
+            }
+            &:hover{
+                > td{
+                    background-color: rgb(253, 242, 255);
+                }
+            }
+        }
+    }
+    //   排序图标
+    .ant-table-column-sorter .anticon-caret-up, .ant-table-column-sorter .anticon-caret-down{color: #fff;}
+    .ant-table-column-sorter-up:hover .anticon, .ant-table-column-sorter-down:hover .anticon{color: #ffbf00;}
+}
+
+
+//   page
+.ant-pagination{
+    .ant-pagination-item:focus, 
+    .ant-pagination-item:hover {
+        border-color: #b18bbb;
+        a{
+            color: #b18bbb;
+        }
+    }
+    .ant-pagination-item-active {
+        background-color: #b18bbb;
+        border-color: #b18bbb;
+        &:focus,
+        &:hover{
+             background-color: #be9ec7;
+             a{
+                 color: #fff;
+             }
+        }
+    }
+    .ant-pagination-prev:focus, 
+    .ant-pagination-next:focus, 
+    .ant-pagination-prev:hover, 
+    .ant-pagination-next:hover{
+        border-color: #b18bbb;
+        a{
+            color: #b18bbb;
+        }
+    }
+}
+.ant-pagination-jump-next{
+    &:after{
+        color: #b18bbb !important;
+    }
+}
+
+
+
+
+
+/*
+* ===========================================
+*   弹窗样式 
+* ===========================================
+*/
+.m-modal-in{
+    .customize-body{
+        h3{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        nz-input{
+
+        }
+    }
+    .customize-footer{
+        text-align: right;
+        margin-top: 15px;
+        button{
+            margin-left: 15px;
+            min-width: 70px;
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+
+/*
+* ===========================================
+*   /弹窗样式 
+* ===========================================
+*/
+
+
+
+// /**
+// *  login
+// */
+// .m-login{background: url('../assets/img/login/bg.jpg') repeat center;color: #fff;}
+// .m-login .abs-center{overflow:initial;}
+// .m-login .ant-card-head{margin: 0 -50px;padding: 0;}
+// .m-login .ant-card-head-title{font-size: 40px;color: #fff;}
+// .m-login .ant-card__primary .ant-card-head{background-color: transparent;border-bottom: 0;}
+// .m-login .ant-card-body{background-color: transparent;padding: 0;}
+// .m-login .ant-card{background-color: transparent;border: none;}
+// .m-login .ant-input-affix-wrapper .ant-input:not(:last-child){padding-right: 5px; padding-left: 50px;}
+// .m-login .ant-input-affix-wrapper .ant-input-suffix{width: 0; left: 15px;}
+// .m-login .ant-input-affix-wrapper .ant-input-suffix .fa{font-size: 24px; color: #f5bd37;}
+// .m-login .login-fr{margin-top: 30px; background-color: #fff;border-radius: 6px;}
+// .m-login .login-fr .ant-form-item{margin-bottom: 0;}
+// .m-login .login-fr .ant-input{margin: 8px 0; border:0;outline: 0;box-shadow: 0 0 0;}
+// .m-login .login-fr .login-line{height: 1px;background-color: #ccc; margin: 0 10px;}
+// .m-login .ant-card-body .ant-btn{height: 44px;line-height: 42px; font-size: 20px;color: #fff;}
+
+

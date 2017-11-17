@@ -1,0 +1,79 @@
+{
+    "app": {
+        "name": "VOI云桌面管理系统",
+        "description": "湖南新云网科技有限公司"
+    },
+    "user": {
+        "name": "Admin",
+        "avatar": "./assets/img/zorro.svg",
+        "email": "cipchk@qq.com"
+    },
+    "menu": [{
+        "text": "",
+        "translate": "main_navigation",
+        "group": true,
+        "children": [{
+            "text": "服务端管理",
+            "translate": "server",
+            "link": "/server",
+            "icon": "fa fa-server",
+            "children": []
+        },{
+            "text": "用户管理",
+            "translate": "user",
+            "link": "/user",
+            "icon": "fa fa-user",
+            "children": [
+                {
+                    "text": "用户总览",
+                    "link": "/user/list",
+                    "translate": "list"
+                },
+                {
+                    "text": "用户组总览",
+                    "link": "/user/type",
+                    "translate": "type"
+                }
+            ]
+        },{
+            "text": "终端管理",
+            "translate": "terminal",
+            "link": "/terminal",
+            "icon": "fa fa-users",
+            "children": [
+                {
+                    "text": "终端总览",
+                    "link": "/terminal/list",
+                    "translate": "list"
+                },
+                {
+                    "text": "终端组总览",
+                    "link": "/terminal/type",
+                    "translate": "type"
+                }
+            ]
+        },{
+            "text": "镜像管理",
+            "translate": "server",
+            "link": "/server",
+            "icon": "fa fa-window-restore",
+            "children": [
+                {
+                    "text": "镜像模板管理",
+                    "link": "/dashboard/v1",
+                    "translate": "dashboard_v1"
+                },
+                {
+                    "text": "镜像总览",
+                    "link": "/dashboard/v1",
+                    "translate": "dashboard_v1"
+                },
+                {
+                    "text": "部署镜像",
+                    "link": "/dashboard/v1",
+                    "translate": "dashboard_v1"
+                }
+            ]
+        }]
+    }]
+}

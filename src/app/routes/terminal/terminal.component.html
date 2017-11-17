@@ -1,0 +1,192 @@
+<div class="m-server">
+    <div class="m-server-menu">
+        <nz-dropdown [nzTrigger]="'click'">
+            <button nz-button nz-dropdown [nzType]="'primary'" [nzSize]="'large'">
+                <span>系统未注册</span>
+                <i class="anticon anticon-down"></i>
+            </button>
+            <ul nz-menu>
+                <li nz-menu-item>未注册</li>
+                <li nz-menu-item>开启系统</li>
+                <li nz-menu-item>关闭系统</li>
+            </ul>
+        </nz-dropdown>
+    
+    
+        <button nz-button [nzType]="'primary'" [nzSize]="'large'">
+            <span>网络配置</span>
+        </button>
+    
+        <nz-dropdown [nzTrigger]="'click'">
+            <button nz-button nz-dropdown [nzType]="'primary'" [nzSize]="'large'">
+                <span>部署模式已关闭</span>
+                <i class="anticon anticon-down"></i>
+            </button>
+            <ul nz-menu>
+                <li nz-menu-item>开启部署模式</li>
+                <li nz-menu-item>退出部署模式</li>
+            </ul>
+        </nz-dropdown>
+    
+        <nz-dropdown [nzTrigger]="'click'">
+            <button nz-button nz-dropdown [nzType]="'primary'" [nzSize]="'large'">
+                <span>服务器管理</span>
+                <i class="anticon anticon-down"></i>
+            </button>
+            <ul nz-menu>
+                <li nz-menu-item>重启</li>
+                <li nz-menu-item>关机</li>
+            </ul>
+        </nz-dropdown>
+    
+        <nz-dropdown [nzTrigger]="'click'">
+            <button nz-button nz-dropdown [nzType]="'primary'" [nzSize]="'large'">
+                <span>终端组管理</span>
+                <i class="anticon anticon-down"></i>
+            </button>
+            <ul nz-menu>
+                <li nz-submenu>
+                    <span title>机房组</span>
+                    <ul nz-menu>
+                        <li nz-menu-item>重起</li>
+                        <li nz-menu-item>关机</li>
+                        <li nz-submenu>
+                            <span title>自动登录镜像</span>
+                            <ul>
+                                <li nz-menu-item>ubuntu.img</li>
+                                <li nz-menu-item>无</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+                    <span title>办公组</span>
+                    <ul nz-menu>
+                        <li nz-menu-item>重起</li>
+                        <li nz-menu-item>关机</li>
+                        <li nz-submenu>
+                            <span title>自动登录镜像</span>
+                            <ul>
+                                <li nz-menu-item>ubuntu.img</li>
+                                <li nz-menu-item>无</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li nz-submenu>
+                    <span title>所有终端</span>
+                    <ul nz-menu>
+                        <li nz-menu-item>重起</li>
+                        <li nz-menu-item>关机</li>
+                    </ul>
+                </li>
+            </ul>
+        </nz-dropdown>
+    </div>
+    
+    
+    <div class="m-title">
+        <div class="title-name">系统概况</div>
+    </div>
+    <div class="m-xs server-run">
+        <nz-card class="m-box">
+            <ng-template #body>
+                <div nz-row [nzGutter]="0">
+                    <div nz-col [nzSm]="12">
+                        <div nz-col [nzSm]="24">
+                            <div class="run-title">运行情况：良好</div>
+                        </div>
+                        <div nz-col [nzSm]="24" class="run-nb">
+                            <div nz-col [nzSm]="6">
+                                <div class="server-nb">
+                                    <span>6</span>
+                                    <p>模板数</p>
+                                </div>
+                            </div>
+                            <div nz-col [nzSm]="6">
+                                <div class="server-nb">
+                                    <span>4</span>
+                                    <p>镜像数</p>
+                                </div>
+                            </div>
+                            <div nz-col [nzSm]="6">
+                                <div class="server-nb">
+                                    <span>3</span>
+                                    <p>用户组数</p>
+                                </div>
+                            </div>
+                            <div nz-col [nzSm]="6">
+                                <div class="server-nb">
+                                    <span>38</span>
+                                    <p>用户数</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div nz-col [nzSm]="12">
+                        <div nz-col [nzSm]="8">
+                            <div class="server-round">
+                                <div class="m-round">
+                                    <div class="round-number">
+                                        <span class="number-left">66%</span>
+                                        <i></i>
+                                        <span class="number-right">29G</span>
+                                    </div>
+                                    <div style="height:120px;" echarts [options] = "chartOption1" [loading]="showloading" class="demo-chart"></div>
+                                </div>
+                                <p>镜像空间</p>
+                            </div>
+                        </div>
+                        <div nz-col [nzSm]="8">
+                            <div class="server-round">
+                                <div class="m-round">
+                                    <div class="round-number">
+                                        <span class="number-left">66%</span>
+                                        <i></i>
+                                        <span class="number-right">29G</span>
+                                    </div>
+                                    <div style="height:120px;" echarts [options]="chartOption2" [loading]="showloading" class="demo-chart"></div>
+                                </div>
+                                <p>网盘空间</p>
+                            </div>
+                        </div>
+                        <div nz-col [nzSm]="8">
+                            <div class="server-round">
+                                <div class="m-round">
+                                    <div class="round-number">
+                                        <span class="number-nb">15%</span>
+                                    </div>
+                                    <div style="height:120px;" echarts [options]="chartOption3" [loading]="showloading" class="demo-chart"></div>
+                                </div>
+                                <p>传输速率</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </nz-card>
+    </div>
+    
+    <div class="m-title">
+        <div class="title-name">系统概况</div>
+    </div>
+    <div class="m-xs">
+        <nz-card class="m-box">
+            <ng-template #body>
+                <div class="mb-sm text-right">
+                    <nz-dropdown>
+                        <button nz-button nz-dropdown [disabled]="!_allChecked && !_indeterminate">
+                            <span>Export</span>
+                            <i class="anticon anticon-down"></i>
+                        </button>
+                        <ul nz-menu>
+                            <li nz-menu-item>Excel</li>
+                            <li nz-menu-item>JSON</li>
+                            <li nz-menu-item>PNG</li>
+                        </ul>
+                    </nz-dropdown>
+                </div>
+            </ng-template>
+        </nz-card>
+    </div>
+</div>
