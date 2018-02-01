@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ServerService } from './server.service';
 import { FormBuilder, FormGroup} from '@angular/forms';
 
-import { NzModalService, NzMessageService } from 'ng-zorro-antd';
+import { NzModalService, NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 //   系统注册弹窗
 import { NzModalInComponent } from './modal-in.component';
-//   提示
-import { NzNotificationService } from 'ng-zorro-antd';
 //   确定开启部署模式
 import { NzModalOpenDeployComponent } from './modal-open-deploy.component';
 import { NzModalCloseDeployComponent } from './modal-close-deploy.component';
@@ -224,117 +222,140 @@ export class ServerComponent implements OnInit {
 
     //   打开注册弹窗
     showModalIn() {
-        const subscription = this.modalService.open({
-            // title: '对话框标题',
-            content: NzModalInComponent,
-            onOk() {},
-            onCancel() {},
-            footer: false,
-            componentParams: {
-                name: '参数'
-            }
-        });
-        subscription.subscribe(result => {
-            if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel' && result !== 'onHidden' && result !== 'onDestroy') {
-                console.log(result);
-                setTimeout(() => {
-                    this._notification.create('success', '成功', '系统注册成功');
-                }, 1000);
-            }
-        });
+        setTimeout(() => {
+            const subscription = this.modalService.open({
+                // title: '对话框标题',
+                content: NzModalInComponent,
+                onOk() { },
+                onCancel() { },
+                footer: false,
+                componentParams: {
+                    name: '参数'
+                }
+            });
+            subscription.subscribe(result => {
+                if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel' 
+                && result !== 'onHidden' && result !== 'onDestroy') {
+                    console.log(result);
+                    setTimeout(() => {
+                        this._notification.create('success', '成功', '系统注册成功');
+                    }, 1000);
+                }
+            });
+        }, 400);
+        
     }
 
     //   弹窗开启系统
     showModalOnServer() {
-        const subscription = this.modalService.confirm({
-            title: '确定开启系统？',
-            onOk: () => {
-                setTimeout(() => {
-                    this._notification.create('success', '成功', '系统开启成功');
-                }, 1000);
-            }
-        });
+        setTimeout(() => {
+            const subscription = this.modalService.confirm({
+                title: '确定开启系统？',
+                onOk: () => {
+                    setTimeout(() => {
+                        this._notification.create('success', '成功', '系统开启成功');
+                    }, 1000);
+                }
+            });
+        }, 400);
+        
     }
 
     //   弹窗关闭系统
     showModalOffServer() {
-        const subscription = this.modalService.confirm({
-            title: '确定关闭系统？',
-            onOk: () => {
-                setTimeout(() => {
-                    this._notification.create('success', '成功', '系统关闭成功');
-                }, 1000);
-            }
-        });
+        setTimeout(() => {
+            const subscription = this.modalService.confirm({
+                title: '确定关闭系统？',
+                onOk: () => {
+                    setTimeout(() => {
+                        this._notification.create('success', '成功', '系统关闭成功');
+                    }, 1000);
+                }
+            });
+        }, 400);
+        
     }
 
     //   打开部署模式
     showModalOpenDeploy() {
-        const subscription = this.modalService.open({
-            // title: '对话框标题',
-            content: NzModalOpenDeployComponent,
-            onOk() { },
-            onCancel() { },
-            footer: false,
-            componentParams: {
-                name: '参数'
-            }
-        });
-        subscription.subscribe(result => {
-            if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel' && result !== 'onHidden' && result !== 'onDestroy') {
-                console.log(result);
-                setTimeout(() => {
-                    this._notification.create('success', '成功', '已开启部署模式');
-                }, 1000);
-            }
-        });
+        setTimeout(() => {
+            const subscription = this.modalService.open({
+                // title: '对话框标题',
+                content: NzModalOpenDeployComponent,
+                onOk() { },
+                onCancel() { },
+                footer: false,
+                componentParams: {
+                    name: '参数'
+                }
+            });
+            subscription.subscribe(result => {
+                if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel' 
+                && result !== 'onHidden' && result !== 'onDestroy') {
+                    console.log(result);
+                    setTimeout(() => {
+                        this._notification.create('success', '成功', '已开启部署模式');
+                    }, 1000);
+                }
+            });
+        }, 400);
     }
 
 
     //   关闭部署模式
     showModalCloseDeploy() {
-        const subscription = this.modalService.open({
-            // title: '对话框标题',
-            content: NzModalCloseDeployComponent,
-            onOk() { },
-            onCancel() { },
-            footer: false,
-            componentParams: {
-                name: '参数'
-            }
-        });
-        subscription.subscribe(result => {
-            if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel' && result !== 'onHidden' && result !== 'onDestroy') {
-                console.log(result);
-                setTimeout(() => {
-                    this._notification.create('success', '成功', '已关闭部署模式');
-                }, 1000);
-            }
-        });
+        setTimeout(() => {
+            const subscription = this.modalService.open({
+                // title: '对话框标题',
+                content: NzModalCloseDeployComponent,
+                onOk() { },
+                onCancel() { },
+                footer: false,
+                componentParams: {
+                    name: '参数'
+                }
+            });
+            subscription.subscribe(result => {
+                if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel' 
+                && result !== 'onHidden' && result !== 'onDestroy') {
+                    console.log(result);
+                    setTimeout(() => {
+                        this._notification.create('success', '成功', '已关闭部署模式');
+                    }, 1000);
+                }
+            });
+        }, 400);
+        
     }
 
 
     //   打开网络配置弹窗
     showModalIp() {
-        const subscription = this.modalService.open({
-            // title: '对话框标题',
-            content: NzModalIpComponent,
-            onOk() { },
-            onCancel() { },
-            footer: false,
-            componentParams: {
-                name: '参数'
-            }
-        });
-        subscription.subscribe(result => {
-            if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel' && result !== 'onHidden' && result !== 'onDestroy') {
-                console.log(result);
-                setTimeout(() => {
-                    this._notification.create('success', '成功', '配置成功');
-                }, 1000);
-            }
-        });
+        setTimeout(() => {
+            const subscription = this.modalService.open({
+                // title: '对话框标题',
+                content: NzModalIpComponent,
+                onOk() { },
+                onCancel() { },
+                footer: false,
+                componentParams: {
+                    name: '参数'
+                }
+            });
+            subscription.subscribe(result => {
+                if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel' 
+                && result !== 'onHidden' && result !== 'onDestroy') {
+                    console.log(result);
+                    setTimeout(() => {
+                        this._notification.create('success', '成功', '配置成功');
+                    }, 1000);
+                }
+            });
+        }, 400);
+        
     }
+
+
 
 
 

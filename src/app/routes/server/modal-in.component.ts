@@ -21,14 +21,14 @@ export class NzModalInComponent implements OnInit {
     _name: string;
 
     //   code
-    code: string;
+    code: string = null;
 
     @Input()
     set name(value: string) {
         this._name = value;
     }
 
-    emitDataOutside() {
+    emitDataOutside(e) {
         
         this.subject.next(this.code);
         this.subject.destroy('onCancel');

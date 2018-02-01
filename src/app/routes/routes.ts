@@ -15,7 +15,7 @@ export const routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'dashboard/v1', pathMatch: 'full' },
+            { path: '', redirectTo: 'server', pathMatch: 'full' },
             { path: 'dashboard', redirectTo: 'dashboard/v1', pathMatch: 'full' },
             { path: 'dashboard/v1', component: DashboardV1Component, data: { translate: 'dashboard_v1' } },
             { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' },
@@ -47,5 +47,5 @@ export const routes = [
     { path: 'maintenance', component: MaintenanceComponent },
     { path: '404', component: Page404Component },
     { path: '500', component: Page500Component },
-    { path: '**', redirectTo: 'dashboard' }
+    { path: '**', redirectTo: 'server', pathMatch: 'full'}
 ];

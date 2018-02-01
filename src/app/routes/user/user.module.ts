@@ -6,10 +6,12 @@ import { SharedModule } from '@shared/shared.module';
 
 import { UserService } from './user.service';
 
-import { ListComponent } from './list/list.component';
+import { ListComponent } from './list.component';
 import { TypeComponent } from './type/type.component';
 
 import { AngularEchartsModule } from 'ngx-echarts';
+
+import { NzModalCustomizeComponent } from './modal-add.component';
 
 const routes: Routes = [
     { path: 'list', component: ListComponent },
@@ -26,13 +28,14 @@ const routes: Routes = [
     providers: [UserService ],
     declarations: [
         ListComponent,
-        TypeComponent
+        TypeComponent,
+        NzModalCustomizeComponent,
     ],
     exports: [
         RouterModule
     ],
     entryComponents: [
-
+        NzModalCustomizeComponent,
     ]
 })
 export class UserModule { }

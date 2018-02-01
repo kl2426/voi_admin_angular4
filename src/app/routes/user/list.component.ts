@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
-import { NzMessageService } from 'ng-zorro-antd';
+import { UserService } from './user.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { NzModalService, NzMessageService, NzNotificationService } from 'ng-zorro-antd';
+
+import { NzModalCustomizeComponent } from './modal-Add.component';
 
 @Component({
     selector: 'app-table-full',
@@ -9,6 +11,15 @@ import { FormBuilder, FormGroup } from '@angular/forms';
     styleUrls: ['list.component.less']
 })
 export class ListComponent implements OnInit {
+
+    //    定义引用
+    constructor(
+        private _UserService: UserService, 
+        private message: NzMessageService,
+        private modalService: NzModalService,
+        private _notification: NzNotificationService,
+    ) {
+    }
 
     // 列表
     table_data = {
@@ -87,9 +98,38 @@ export class ListComponent implements OnInit {
             });
 
     }
-    //    定义引用
-    constructor(private _UserService: UserService, private message: NzMessageService) {
+    
+
+
+    //   打开新建、修改、查看
+    showModalAdd() {
+        setTimeout(() => {
+            const subscription = this.modalService.open({
+                // title: '对话框标题',
+                content: NzModalCustomizeComponent,
+                onOk() { },
+                onCancel() { },
+                footer: false,
+                componentParams: {
+                    name: '参数'
+                }
+            });
+            subscription.subscribe(result => {
+                if (result !== 'onShown' && result !== 'onHide' && result !== 'onCancel'
+                    && result !== 'onHidden' && result !== 'onDestroy') {
+                    console.log(result);
+                    setTimeout(() => {
+                        this._notification.create('success', '成功', '配置成功');
+                    }, 1000);
+                }
+            });
+        }, 400);
+
     }
+
+
+
+
     //    init
     ngOnInit() {
         this.findFunctionList();

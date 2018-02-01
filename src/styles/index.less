@@ -85,6 +85,9 @@ body {
 .hidden{display: none !important; }
 
 .m-xs{margin: 10px !important; }
+.m-b-xs{margin-bottom: 10px !important;}
+
+
 
 .m-box.ant-card{
     background-color: #fff;
@@ -96,6 +99,9 @@ body {
 
 
 //   下拉菜单
+.nz-overlay-container{
+    // z-index: 999 !important;    
+}
 .ant-dropdown{
     margin-top: 1px !important;
     margin-bottom: 1px !important;
@@ -492,6 +498,56 @@ body {
                 margin-left: 0;
             }
         }
+    }
+}
+
+//   网络配置
+.m-modal-ip{
+    .ant-form-item{
+        margin-bottom: 15px;
+    }
+}
+//   ip地址输入框
+.m-input-ip{
+    padding-left:0;
+    padding-right: 0; 
+    &.ant-input:hover{
+        border-color: #b18bbb;
+    }
+    
+    .ip-input{
+        margin-right: -20px;
+    }
+    div[nz-col]{
+        height: 18px;
+        line-height: 18px;
+        padding-right: 20px;
+        position: relative;
+        &:after{
+            position: absolute;
+            right: 0;
+            top: 0;
+            content: "-";
+            text-align: center;
+            height: inherit;
+            line-height: inherit;
+            width: 20px;
+        }
+        &:last-child{
+            &:after{
+                content: "";
+            }
+        }
+    }
+    input{
+        text-align: center;
+        width: 100%;
+        padding: 0 3px;
+        height: 18px;
+        line-height: 18px;
+        border: 0;
+        outline: 0;
+        box-shadow: 0 0 0;
     }
 }
 

@@ -28,7 +28,7 @@ export class NzModalOpenDeployComponent implements OnInit {
         this._name = value;
     }
 
-    emitDataOutside() {
+    emitDataOutside(e) {
         
         this.subject.next(this.code);
         this.subject.destroy('onCancel');
